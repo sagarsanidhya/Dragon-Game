@@ -1,0 +1,142 @@
+/* General body styles */
+:root {
+    --background-color: #e0f7fa; /* Light mode background */
+    --text-color: #000; /* Light mode text color */
+    --button-background: #007bff; /* Light mode button background */
+    --button-hover: #0056b3; /* Light mode button hover */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+    height: 100vh; /* Full viewport height */
+    font-family: 'Ubuntu', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+/* Dark mode styles */
+body.dark-mode {
+    --background-color: #121212; /* Dark mode background */
+    --text-color: #e0f7fa; /* Dark mode text color */
+    --button-background: #4caf50; /* Dark mode button background */
+    --button-hover: #388e3c; /* Dark mode button hover */
+}
+
+/* Container to hold the game */
+.container {
+    position: relative;
+    width: 800px;
+    height: 300px;
+    border: 2px solid #000;
+    background-color: #f3f3f3;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+/* Game heading */
+#gameName {
+    margin: 20px;
+    text-align: center;
+}
+
+/* Dragon character styling */
+.dragon {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-image: url('dragon.png'); /* Replace with your dragon image path */
+    background-size: cover;
+    bottom: 50px; /* Adjust this if needed */
+    left: 50px; /* Start position at left */
+}
+
+/* Obstacle styling */
+.obstacle {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-image: url('obstacle.png'); /* Replace with your obstacle image path */
+    bottom: 50px;
+    right: 0;
+}
+
+/* Animation for the obstacle */
+.animateobstacle {
+    animation: moveObstacle 3s linear infinite;
+}
+
+/* Keyframes for obstacle animation */
+@keyframes moveObstacle {
+    0% {
+        right: 0;
+    }
+    100% {
+        right: 100%;
+    }
+}
+
+/* Game over message styling */
+.gameover {
+    display: none;
+    font-size: 2rem;
+    color: red;
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Score counter styling */
+#scorecount, #highscorecount {
+    position: absolute;
+    top: 10px;
+    font-size: 1.5rem;
+}
+
+/* Position the highest score to the right */
+#highscorecount {
+    right: 10px; /* Adjusted to position on the right */
+}
+
+/* Button styling */
+button {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    font-family: 'Ubuntu', sans-serif;
+    color: #fff;
+    background-color: var(--button-background); /* Use CSS variable */
+    border: none;
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transition effects */
+    display: block; /* Change to block to center */
+    margin: 10px auto; /* Center horizontally with auto margins */
+}
+
+/* Hover effect */
+button:hover {
+    background-color: var(--button-hover); /* Use CSS variable */
+    transform: scale(1.05); /* Slightly increase size on hover */
+}
+
+/* Active state */
+button:active {
+    transform: scale(0.95); /* Slightly decrease size when pressed */
+}
+
+#playAgain {
+    position: absolute;
+    left: 10px; /* Adjust this for spacing from left */
+    bottom: 10px; /* Adjust this for spacing from bottom */
+}
+
+#themeToggle {
+    position: absolute;
+    right: 10px; /* Adjust this for spacing from right */
+    bottom: 10px; /* Adjust this for spacing from bottom */
+}

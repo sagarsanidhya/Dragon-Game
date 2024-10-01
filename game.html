@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;700&display=swap" rel="stylesheet">
+    <title>Dragon Game</title>
+</head>
+<body>
+    <h1 id="gameName">Welcome to Dragon's World</h1>
+    <div class="container">
+        <div class="gameover">Game Over</div>
+        <div id="scorecount">Your score: 0</div>
+        <div id="highscorecount">Highest score: 0</div>
+        <div class="obstacle animateobstacle"></div>
+        <div class="dragon" style="left: 50px;"></div>
+    </div>
+    <button id="playAgain" style="display:none;">Play Again</button> <!-- Move this outside the container -->
+    <button id="themeToggle">Switch to Dark Mode</button> <!-- Move this outside the container -->
+
+    <script src="script.js"></script>
+</body>
+</html>
