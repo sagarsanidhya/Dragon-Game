@@ -49,7 +49,7 @@ body.dark-mode {
     position: absolute;
     width: 50px;
     height: 50px;
-    background-image: url('dragon.png'); /* Replace with your dragon image path */
+    background-image: url('images/dragon.png'); /* Replace with your dragon image path */
     background-size: cover;
     bottom: 50px; /* Adjust this if needed */
     left: 50px; /* Start position at left */
@@ -60,7 +60,7 @@ body.dark-mode {
     position: absolute;
     width: 50px;
     height: 50px;
-    background-image: url('obstacle.png'); /* Replace with your obstacle image path */
+    background-image: url('images/obstacle.png'); /* Replace with your obstacle image path */
     bottom: 50px;
     right: 0;
 }
