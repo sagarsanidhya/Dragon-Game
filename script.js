@@ -39,29 +39,28 @@ document.onkeydown = function (e) {
 
 // Function to make the dragon jump
 function jump() {
+    if (isJumping || isGameOver) return; // Prevent multiple jumps
+
     isJumping = true;
     let jumpHeight = 0;
     let maxJumpHeight = 150;
-    let jumpSpeed = 5;
+    let gravity = 4; // Gravity effect
+    let jumpSpeed = 15; // Initial jump speed
 
-    // Going up
-    let upInterval = setInterval(() => {
+    let jumpInterval = setInterval(() => {
         if (jumpHeight >= maxJumpHeight) {
-            clearInterval(upInterval);
+            gravity = -gravity; // Reverse gravity to fall down
+        }
 
-            // Coming down
-            let downInterval = setInterval(() => {
-                if (jumpHeight <= 0) {
-                    clearInterval(downInterval);
-                    isJumping = false;
-                    hasScored = false; // Reset scoring flag
-                }
-                jumpHeight -= jumpSpeed;
-                dragon.style.bottom = jumpHeight + 50 + 'px';
-            }, 20);
-        } else {
-            jumpHeight += jumpSpeed;
-            dragon.style.bottom = jumpHeight + 50 + 'px';
+        jumpHeight += gravity;
+        dragon.style.bottom = jumpHeight + 50 + 'px';
+
+        // Reset when back on the ground
+        if (jumpHeight <= 0) {
+            clearInterval(jumpInterval);
+            isJumping = false;
+            hasScored = false; // Reset scoring flag
+            dragon.style.bottom = '50px'; // Reset dragon position
         }
     }, 20);
 }
